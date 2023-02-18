@@ -32,8 +32,18 @@ namespace New_5_2_2
                 Console.ForegroundColor = ConsoleColor.White;
 
                 
-                favcolor[i] = ShowColor(anketa.name, anketa.age); //Передача данных из кортеджа anketa в метод ShowColor
+                favcolor[i] = ShowColor(anketa.name, anketa.age); //Передача данных из кортеджа anketa в метод Color (данные передаются в аргументы метода)
+                               
             }
+            ShowFavColor(favcolor); // Передача значения массива favcolor в метод ShowFavColor. Вызов метода ShowFavColor
+
+
+
+            Console.ReadKey();
+        }
+        static void ShowFavColor(string[] colors ) // Перечисление всех введенных цветов пользователя вынесено в отдельный метод.
+                                                   // Просиходит получение значения массива favcolor в метод ShowFavColor.
+        {
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
 
@@ -41,12 +51,10 @@ namespace New_5_2_2
 
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
-            foreach (var color in favcolor)
+            foreach (var color in colors)
             {
                 Console.WriteLine(color);
             }
-            
-            Console.ReadKey();
         }
         static string ShowColor(string username, int userage) // Инициализация метода и прием в метод значений из кортеджа anketa
         {
