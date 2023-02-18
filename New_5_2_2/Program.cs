@@ -5,13 +5,23 @@
         static void Main(string[] args)
         {
 
+            // Кортедж anketa
+            (string name, int age) anketa;
+            Console.WriteLine("Enter your name: ");
+            anketa.name = Console.ReadLine();
+            Console.WriteLine("Enter your age: ");
+            anketa.age = Convert.ToInt32(Console.ReadLine());
 
+            Console.WriteLine("Your name is {0}", anketa.name);
+            Console.WriteLine("Your age is {0}", anketa.age);
+
+            // Код сортировки массива из метода
             var favcolor = new string[3];
             Console.WriteLine("Your favorite colors");
             for (int i = 0; i < favcolor.Length; i++)
             {
 
-                Console.BackgroundColor = ConsoleColor.White;
+                Console.BackgroundColor = ConsoleColor.White; 
                 Console.ForegroundColor = ConsoleColor.Black;
 
                 Console.WriteLine("\nIteration {0}", i + 1);
