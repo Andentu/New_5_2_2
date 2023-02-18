@@ -1,4 +1,6 @@
-﻿namespace New_5_2_2
+﻿using System.Drawing;
+
+namespace New_5_2_2
 {
     internal class Program
     {
@@ -29,8 +31,8 @@
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
 
-                Console.Write("Enter your color: ");
-                favcolor[i] = ShowColor();
+                
+                favcolor[i] = ShowColor(anketa.name, anketa.age); //Передача данных из кортеджа anketa в метод ShowColor
             }
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
@@ -43,11 +45,13 @@
             {
                 Console.WriteLine(color);
             }
+            
             Console.ReadKey();
         }
-        static string ShowColor()
+        static string ShowColor(string username, int userage) // Инициализация метода и прием в метод значений из кортеджа anketa
         {
 
+            Console.Write("{0}, {1} years old. Enter your color: ", username, userage); // Использование данных из метада, взятых из кортеджа
             string color = new(Console.ReadLine());
 
             switch (color)
@@ -106,14 +110,9 @@
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Sorry color {0} not found in database", color);
                     break;
-
-
-
-
-
-
             }
             return color;
+            
 
         }
     }
